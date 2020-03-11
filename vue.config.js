@@ -11,7 +11,7 @@ module.exports = {
     electronBuilder: {
       mainProcessWatch: ['src/plugins/proxy.js', 'src/plugins/ak_data.js'],
       builderOptions: {
-        "appId": "com.example.app",
+        "appId": "kr.devflow.frostnova",
         "productName": "FrostNova",
         "win": {
           'icon': 'build/icon.ico',
