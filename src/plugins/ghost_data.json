@@ -1,0 +1,288 @@
+{
+    "ghost": {
+        "what": "this is an empty data structure for arknights.",
+        "ver": "2020-03-11"
+    },
+    "activity": {
+        "CHECKIN_ONLY": {},
+        "DEFAULT": {},
+        "MISSION_ONLY": {}
+    },
+    "building": {
+        "assist": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+        ],
+        "chars": {},
+        "diyPresetSolutions": {},
+        "furniture": {},
+        "roomSlots": {},
+        "rooms": {
+            "CONTROL": {},
+            "CORRIDOR": {},
+            "DORMITORY": {},
+            "ELEVATOR": {},
+            "HIRE": {},
+            "MANUFACTURE": {},
+            "MEETING": {},
+            "POWER": {},
+            "TRADING": {},
+            "TRAINING": {},
+            "WORKSHOP": {}
+        },
+        "status": {}
+    },
+    "checkIn": {
+        "canCheckIn": 0,
+        "checkInGroupId": "",
+        "checkInHistory": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "checkInRewardIndex": 0
+    },
+    "collectionReward": {
+        "team": {}
+    },
+    "consumable": {},
+    "dexNav": {
+        "character": {},
+        "enemy": {
+            "enemies": {},
+            "stage": {}
+        },
+        "formula": {
+            "manufacture": {},
+            "shop": {},
+            "workshop": {}
+        },
+        "team": {}
+    },
+    "dungeon": {
+        "campaigns": {
+            "activeGroupId": "",
+            "campaignCurrentFee": 0,
+            "campaignTotalFee": 0,
+            "instances": {
+                "camp_01": {
+                    "maxKills": 0,
+                    "rewardStatus": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "camp_02": {
+                    "maxKills": 0,
+                    "rewardStatus": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "camp_03": {
+                    "maxKills": 0,
+                    "rewardStatus": [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            }
+        },
+        "stages": {}
+    },
+    "event": {
+        "building": 0
+    },
+    "gacha": {
+        "newbee": {
+            "cnt": 0,
+            "openFlag": 0
+        },
+        "normal": {}
+    },
+    "inventory": {},
+    "mission": {},
+    "openServer": {
+        "chainLogin": {
+            "history": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "isAvailable": false,
+            "nowIndex": 6
+        },
+        "checkIn": {
+            "history": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "isAvailable": false
+        }
+    },
+    "pushFlags": {
+        "hasClues": 0,
+        "hasFreeLevelGP": 0,
+        "hasFriendRequest": 0,
+        "hasGifts": 0,
+        "status": 0
+    },
+    "recruit": {
+        "normal": {
+            "slots": {
+                "0": {
+                    "durationInSec": 0,
+                    "maxFinishTs": 0,
+                    "realFinishTs": 0,
+                    "selectTags": [],
+                    "startTs": 0,
+                    "state": -1,
+                    "tags": []
+                },
+                "1": {
+                    "durationInSec": 0,
+                    "maxFinishTs": 0,
+                    "realFinishTs": 0,
+                    "selectTags": [],
+                    "startTs": 0,
+                    "state": -1,
+                    "tags": []
+                },
+                "2": {
+                    "durationInSec": 0,
+                    "maxFinishTs": 0,
+                    "realFinishTs": 0,
+                    "selectTags": [],
+                    "startTs": 0,
+                    "state": -1,
+                    "tags": []
+                },
+                "3": {
+                    "durationInSec": 0,
+                    "maxFinishTs": 0,
+                    "realFinishTs": 0,
+                    "selectTags": [],
+                    "startTs": 0,
+                    "state": -1,
+                    "tags": []
+                }
+            }
+        }
+    },
+    "shop": {},
+    "skin": {},
+    "social": {
+        "assistCharList": [],
+        "yesterdayReward": {
+            "assistAmount": 0,
+            "canReceive": 0,
+            "comfortAmount": 0,
+            "first": 0
+        }
+    },
+    "status": {
+        "ap": 0,
+        "apLimitUpFlag": 0,
+        "avatarId": "0",
+        "buyApRemainTimes": 0,
+        "diamondShard": 0,
+        "exp": 0,
+        "flags": {},
+        "freeDiamond": 0,
+        "friendNumLimit": 0,
+        "gachaTicket": 0,
+        "gold": 0,
+        "hggShard": 0,
+        "instantFinishTicket": 0,
+        "lastApAddTime": 0,
+        "lastOnlineTs": 0,
+        "lastRefreshTs": 0,
+        "level": 0,
+        "lggShard": 0,
+        "mainStageProgress": "",
+        "maxAp": 0,
+        "monthlySubscriptionEndTime": 0,
+        "monthlySubscriptionStartTime": 0,
+        "nickName": "",
+        "nickNumber": "",
+        "payDiamond": 0,
+        "practiceTicket": 0,
+        "progress": 0,
+        "recruitLicense": 0,
+        "registerTs": 0,
+        "resume": "",
+        "secretary": "",
+        "secretarySkinId": "",
+        "serverName": "",
+        "socialPoint": 0,
+        "tenGachaTicket": 0,
+        "uid": ""
+    },
+    "ticket": {},
+    "troop": {
+        "chars": {},
+        "curCharInstId": 0,
+        "curSquadCount": 4,
+        "squads": {
+            "0": {
+                "name": "",
+                "slots": [],
+                "squadId": "0"
+            },
+            "1": {
+                "name": "",
+                "slots": [],
+                "squadId": "1"
+            },
+            "2": {
+                "name": "",
+                "slots": [],
+                "squadId": "2"
+            },
+            "3": {
+                "name": "외곽",
+                "slots": [],
+                "squadId": "3"
+            }
+        }
+    }
+}
