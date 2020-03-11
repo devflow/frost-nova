@@ -1,5 +1,11 @@
+![Image](https://github.com/devflow/frost-nova/blob/master/public/icon.png)
+
 # FrostNOVA
 a info helper for Arknights.kr on Windows and MacOS
+
+![Image](https://github.com/devflow/frost-nova/blob/master/gh-images/img1.jpg)
+
+![Image](https://github.com/devflow/frost-nova/blob/master/gh-images/img2.jpg)
 
 ## How to use it
 1. Turn on the frostnova proxy server.
