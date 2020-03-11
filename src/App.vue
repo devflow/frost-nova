@@ -75,7 +75,6 @@
           <v-tab to="/">메인</v-tab>
           <v-tab to="/recruitment">공개모집</v-tab>
           <v-tab to="/operators">오퍼레이터</v-tab>
-          <v-tab to="/user">유저</v-tab>
           <v-tab to="/about">도움말</v-tab>
         </v-tabs>
       </template>
