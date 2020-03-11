@@ -18,7 +18,7 @@
                   <v-list-item-title class="headline">
                     <countdown
                       v-show="slots[i].state == 2"
-                      :time="((now - slots[i].realFinishTs) * 1000)"
+                      :time="((slots[i].realFinishTs - now) * 1000)"
                     >
                       <template
                         slot-scope="props"
