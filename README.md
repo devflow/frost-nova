@@ -5,7 +5,7 @@ a info helper for Arknights.kr on Windows and MacOS
 
 ![Image](https://github.com/devflow/frost-nova/blob/master/gh-images/img1.jpg)
 
-![Image](https://github.com/devflow/frost-nova/blob/master/gh-images/img2.jpg)
+![Image](https://github.com/devflow/frost-nova/blob/master/gh-images/img2.png)
 
 ## How to use it
 1. Turn on the frostnova proxy server.
