@@ -12,6 +12,18 @@ a info helper for Arknights.kr on Windows and MacOS
 2. On your game deivce(also can AppPlayers), setting up proxy(`default: http://127.0.0.1:8080/`) and add certification with the CA Key(`ca.pem`)
 3. start the game. *AND Keep your proxy sever alive for avoiding data corruption.*
 
+## Inventory
+You can easily export data to [ark planner](https://penguin-stats.io/planner) from GAME DATA `Yes, frost-nova :)`!
+
+data example :
+```
+[{"name":"","have":5,"need":0,"id":"2001"},{"name":"","have":8,"need":0,"id":"2002"},{"name":"","have":7,"need":0,"id":"2003"},{"name":"","have":13,"need":0,"id":"2004"},{"name":"","have":1,"need":0,"id":"3003"},{"name":"","have":1,"need":0,"id":"3105"},{"name":"","have":38,"need":0,"id":"3112"}, .... ]
+```
+
+Yes. there are includes some useless data. but no problem.
+Thanks again [penguin-statistics](https://github.com/penguin-statistics)
+
+
 ## FAQ
 ### Who is your best waifu in arknights?
 - Jessica The CRYING CAT
