@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import User from '../views/User.vue'
 import Recruitment from '../views/Recruitment'
 import Operators from '../views/Operators'
+import Inventory from '../views/Inventory'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/recruitment',
     name: 'Recruitment',
     component: Recruitment
+  },
+  {
+    path: '/inventory',
+    name: 'Inventory',
+    component: Inventory
   },
   {
     path: '/operators',
