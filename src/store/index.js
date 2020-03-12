@@ -25,6 +25,21 @@ export default new Vuex.Store({
         lastUpdate: s => {
             return s.lastUpdatedAt == 0 ? '-' : moment.unix(s.lastUpdatedAt).format('YYYY-MM-DD a h:mm:ss')
         },
+        inventoryPSJson: s => {
+            var inventory = s.playerData.inventory
+            var outputData = []
+
+            Object.keys(inventory).forEach(function(key) {
+                outputData.push({
+                    name: "",
+                    have: inventory[key],
+                    need: 0,
+                    id: key
+                })
+            })
+            
+            return JSON.stringify(outputData)
+        },
         getField
     },
 
