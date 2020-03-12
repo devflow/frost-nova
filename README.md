@@ -9,10 +9,22 @@ a info helper for Arknights.kr on Windows and MacOS
 
 ## How to use it
 1. Turn on the frostnova proxy server.
-2. On your game deivce(also can AppPlayers), setting up proxy(`default: http://127.0.0.1:8080/`) and add certification with the CA Key(`ca.pem`)
+2. On your game deivce(also can AppPlayers), setting up proxy(`default: http://127.0.0.1:8080/`) and add certificate with the CA Key(`ca.pem`)
 3. start the game. *AND Keep your proxy sever alive for avoiding data corruption.*
 
-## Inventory
+## How to install certificate
+1. [Android](https://support.google.com/pixelphone/answer/2844832)
+2. [iOS1](https://help.clouduss.com/ws-knowledge-base/installing-an-ssl-certificate-on-i-os-13) ,[iOS 2](https://support.apple.com/en-us/HT204477)
+
+## Features
+
+### Recruitment
+Quickly see what Operators are available from their pool of five tags(or less tags on recruiting) in Recruitment slots.
+
+### Operators
+Manage your operators morale, notificate to you when operator are restored or tired.
+
+### Inventory
 You can easily export data to [ark planner](https://penguin-stats.io/planner) from GAME DATA `Yes, frost-nova :)`!
 
 data example :
@@ -32,6 +44,7 @@ Thanks again [penguin-statistics](https://github.com/penguin-statistics)
 open a github issue or Just fork repo and send me a request. (`not master branch.`)
 
 ## TODO
+- [ ] Support Global(EN), JP and CN Server, and other languages.
 - [ ] Without desktop, Stand-alone mobile application.
 - [ ] report crash
 
