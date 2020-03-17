@@ -855,7 +855,7 @@ export const tagList = [
     },
     {
       "id": 16,
-      "name": "서포트"
+      "name": "지원"
     },
     {
       "id": 17,
