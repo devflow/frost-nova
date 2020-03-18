@@ -5,7 +5,7 @@
         <v-row class="ma-6">
           <v-col cols="12" sm="6">
             <v-text-field
-              label="IP 주소"
+              :label="$t('ip_address')"
               readonly
               v-model="myIp"
               append-outer-icon="mdi-paperclip"
@@ -14,9 +14,9 @@
           </v-col>
           <v-col cols="12" sm="6">
             <v-text-field
-              :rules="[() => !!serverPort || '필수로 입력해야합니다.', () => { var x = Number.parseInt(serverPort); if(x > 0 && x <= 65535) { return true } else { return '올바르지 않은 포트값 입니다.' } }]"
+              :rules="[() => !!serverPort || $t('required_field'), () => { var x = Number.parseInt(serverPort); if(x > 0 && x <= 65535) { return true } else { return $t('invalid_port') } }]"
               ref="serverPort"
-              label="포트 (1-65535, 기본값 : 8080)"
+              :label="$t('label_port_range')"
               placeholder="Placeholder"
               v-model="serverPort"
               :disabled="isServerRunning"
@@ -25,7 +25,7 @@
           </v-col>
           <v-col sm="12">
             <v-text-field
-              label="인증서 다운로드 URL (프록시 연결 후 다운로드 가능)"
+              :label="$t('cert_url')"
               readonly
               append-outer-icon="mdi-paperclip"
               @click:append-outer="copyCaUrl"
@@ -42,13 +42,13 @@
           @click="turnOnServer"
         >
           <v-icon left dark>{{ isServerRunning ? 'mdi-wifi-off' : 'mdi-wifi' }}</v-icon>
-          {{ isServerRunning ? '서버 끄기' : '서버 켜기' }}
+          {{ isServerRunning ? $t('server_off') : $t('server_on') }}
         </v-btn>
 
       </v-col>
     </v-row>
     <v-snackbar v-model="copySnak" color="blue" top :timeout="3000">
-      클립보드에 복사되었습니다.
+      {{ $t('copied_to_clipboard') }}
     </v-snackbar>
   </v-container>
 </template>

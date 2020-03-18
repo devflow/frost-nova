@@ -1,0 +1,14 @@
+{
+    "app_name": "FrostNova",
+    "language": "Languages",
+    "notification": "Notifications",
+    "no_notifications": "No Notifications",
+    "menu_main": "Main",
+    "menu_recruit": "Recruitment",
+    "menu_about": "About",
+    "menu_oper": "Operators",
+    "menu_inv": "Inventory",
+    "warn_old_data": "Need to update",
+    "last_update": "Updated at ",
+    "close": "CLOSE"
+  }

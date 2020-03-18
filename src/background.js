@@ -16,7 +16,7 @@ proxy.onError(function (ctx, err) {
     case 'EADDRINUSE':
       proxy.isRunning = false
       win.webContents.send('message', {
-        msg: '이미 사용중인 포트입니다. 다른 포트를 입력하세요.',
+        msg: 'port_already_used',
         type: 'error',
       });
       store.commit('updateField', { path: 'isServerRunning', value: false })
@@ -27,19 +27,19 @@ proxy.onError(function (ctx, err) {
   }
 })
 
-ipcMain.on('toggle-server', (e, v) => {
+ipcMain.on('toggle-server', () => {
   proxy.changePort(store.state.serverPort)
 
   if (!proxy.isRunning) {
     proxy.start()
     win.webContents.send('message', {
-      msg: '서버가 시작되었습니다.',
+      msg: 'starting_server',
       type: 'info',
     })
   } else {
     proxy.close()
     win.webContents.send('message', {
-      msg: '서버가 중지되었습니다.',
+      msg: 'shutdowning_server',
       type: 'error',
     })
   }

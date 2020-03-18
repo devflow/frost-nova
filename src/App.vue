@@ -20,9 +20,34 @@
         <v-icon>mdi-close</v-icon>
       </v-btn>
 
-      <v-toolbar-title class="font-weight-thin">FrostNova</v-toolbar-title>
+      <v-toolbar-title class="font-weight-thin">{{ $t('app_name') }}</v-toolbar-title>
 
       <v-spacer></v-spacer>
+
+       <v-menu
+        class="nd"
+        :close-on-content-click="false"
+        max-height="70%"
+        transition="slide-y-transition"
+        offset-x
+      >
+        <template v-slot:activator="{ on }">
+          <v-btn icon tile color="white" v-on="on" class="nd">
+            <v-icon>mdi-translate</v-icon>
+          </v-btn>
+        </template>
+        
+        <v-list class="nd" nav dense>
+          <v-subheader>{{ $t('language') }}</v-subheader>
+          <v-list-item v-for="(item, key) in languages" dense :key="`ln${key}`" @click="$i18n.locale=key">
+            <v-list-item-content>
+              <v-list-item-title>
+                {{ item }}({{ key }})
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
       <v-menu
         class="nd"
@@ -38,11 +63,11 @@
         </template>
         
         <v-list class="nd" nav dense>
-          <v-subheader>알림</v-subheader>
+          <v-subheader>{{ $t('notification') }}</v-subheader>
           <v-list-item v-show="messages.length == 0">
             <v-list-item-content>
               <v-list-item-title>
-                알림이 없습니다
+                {{ $t('no_notifications') }}
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -72,11 +97,11 @@
 
       <template v-slot:extension>
         <v-tabs align-with-title class="nd">
-          <v-tab to="/">메인</v-tab>
-          <v-tab to="/recruitment">공개모집</v-tab>
-          <v-tab to="/operators">오퍼레이터</v-tab>
-          <v-tab to="/inventory">인벤토리</v-tab>
-          <v-tab to="/about">도움말</v-tab>
+          <v-tab to="/">{{ $t('menu_main') }}</v-tab>
+          <v-tab to="/recruitment">{{ $t('menu_recruit') }}</v-tab>
+          <v-tab to="/operators">{{ $t('menu_oper') }}</v-tab>
+          <v-tab to="/inventory">{{ $t('menu_inv') }}</v-tab>
+          <v-tab to="/about">{{ $t('menu_about') }}</v-tab>
         </v-tabs>
       </template>
     </v-app-bar>
@@ -91,21 +116,21 @@
 
     <v-footer app :color="(nowTs() - lastUpdatedAt) > 21600 ? 'red' : ''">
       <template v-if="(nowTs() - lastUpdatedAt) > 21600">
-        <span>갱신이 필요합니다.</span>
+        <span>{{ $t('warn_old_data') }}</span>
       </template>
       <template v-else>
-        <span>갱신 : {{ lastUpdate }} - {{ nickName }}</span>
+        <span>{{ $t('last_update') }} : {{ lastUpdate }} - {{ nickName }}</span>
       </template>
     </v-footer>
 
     <v-snackbar v-model="infoSnack">
       {{ sbInfoMsg }}
-      <v-btn text @click="infoSnack = false">닫기</v-btn>
+      <v-btn text @click="infoSnack = false">{{ $t('close') }}</v-btn>
     </v-snackbar>
 
     <v-snackbar color="red" v-model="errorSnack">
       {{ sbErrorMsg }}
-      <v-btn text @click="errorSnack = false">닫기</v-btn>
+      <v-btn text @click="errorSnack = false">{{ $t('close') }}</v-btn>
     </v-snackbar>
   </v-app>
 </template>
@@ -126,7 +151,11 @@ export default {
     sbInfoMsg: "",
     errorSnack: false,
     sbErrorMsg: "",
-    messages: []
+    messages: [],
+    languages: {
+      "ko":"한국어",
+      "en":"English",
+    }
   }),
 
   computed: {
@@ -148,17 +177,17 @@ export default {
         color = "primary";
 
       if (p.type == "info") {
-        this.sbInfoMsg = p.msg;
+        this.sbInfoMsg = this.$t(p.msg);
         this.infoSnack = true;
       } else {
-        this.sbErrorMsg = p.msg;
+        this.sbErrorMsg = this.$t(p.msg);
         this.errorSnack = true;
         icon = "mdi-alert-circle-outline";
         color = "error";
       }
 
       this.messages.unshift({
-        msg: p.msg,
+        msg: this.$t(p.msg),
         icon,
         color,
         at: moment().format("MM/DD HH:mm:ss")

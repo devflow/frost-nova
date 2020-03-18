@@ -1,12 +1,12 @@
 <template>
   <v-container>
     <div v-if="Object.values(slots).every((e) => e.state == -1)">
-      <v-alert type="error" class="ma-6" outlined>데이터가 없습니다 :/</v-alert>
+      <v-alert type="error" class="ma-6" outlined>{{ $t('no_data') }}</v-alert>
     </div>
     <div v-if="Object.values(slots).some((e) => e.state != -1)">
       <v-row class="mx-2">
-        <v-switch v-model="hideName" label="오퍼레이터 이름 숨기기" class="mr-4"></v-switch>
-        <v-switch v-model="onlyOver4Star" label="4성이상 확정만 표시"></v-switch>
+        <v-switch v-model="hideName" :label="$t('hide_op_name')" class="mr-4"></v-switch>
+        <v-switch v-model="onlyOver4Star" :label="$t('only_over_4star')"></v-switch>
       </v-row>
       <v-row>
         <v-expansion-panels accordion multiple>
@@ -24,7 +24,7 @@
                         slot-scope="props"
                       >{{ pad(props.hours) }}:{{ pad(props.minutes) }}:{{ pad(props.seconds) }}</template>
                     </countdown>
-                    <span v-show="slots[i].state == 1">모집대기</span>
+                    <span v-show="slots[i].state == 1">{{ $t('ready_recruit') }}</span>
                   </v-list-item-title>
                   <v-list-item-subtitle>
                     <v-row v-show="slots[i].selectTags.length > 0" class="ma-0">
@@ -68,7 +68,7 @@
                       v-show="v.perfect"
                       color="orange"
                       text-color="white"
-                    >확정</v-chip>
+                    >{{ $t('perfect_group') }}</v-chip>
                     <v-chip
                       class="mr-2 mb-2"
                       label

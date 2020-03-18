@@ -4,22 +4,9 @@ import fs from "fs"
 import { tagList, charList } from './ak_data'
 const moment = require('moment');
 
-const TraverseUpdator = (obj, parent) => {
-    Object.keys(obj).forEach((key) => {
-        if (/* must be first array */ obj[key] instanceof Array
-            || typeof obj[key] == 'string' || typeof obj[key] == 'number') {
-            store.commit('updateField', { path: parent + "." + key, value: obj[key] })
-        } else if (typeof obj[key] == 'object') {
-            TraverseUpdator(obj[key], parent + "." + key)
-        } else /* not found */ {
-            ///
-        }
-    })
-}
-
 const chkPath = function (obj, level, ...rest) {
     if (obj === undefined) return false
-    if (rest.length == 0 && obj.hasOwnProperty(level)) return true
+    if (rest.length == 0 && Object.prototype.hasOwnProperty.call(obj, level)) return true
     return chkPath(obj[level], ...rest)
 }
 
@@ -45,7 +32,7 @@ const calcSlot = function (slot) {
             if (subSet.every(function (v) { return char.tags.includes(v) })) {
                 var idxId = subSet.join(':')
 
-                if (!matchedList.hasOwnProperty(idxId)) {
+                if (!Object.prototype.hasOwnProperty.call(matchedList, idxId)) {
                     matchedList[idxId] = {
                         tags: tagList.filter(function (o) { return subSet.indexOf(o.id) >= 0 }),
                         chars: [],
@@ -82,18 +69,18 @@ const DataExtractors = [
         path: '*',
         extract: async (data) => {
             var exData = { 'no-impl-data': true }
-            if (/* syncData */data.hasOwnProperty('user')) {
+            if (/* syncData */Object.prototype.hasOwnProperty.call(data, 'user')) {
                 exData = data.user
-            } else if (/* other modified */data.hasOwnProperty('playerDataDelta')) {
+            } else if (/* other modified */Object.prototype.hasOwnProperty.call(data, 'playerDataDelta')) {
                 //modified
-                if (data.playerDataDelta.hasOwnProperty('modified')) {
+                if (Object.prototype.hasOwnProperty.call(data.playerDataDelta, 'modified')) {
                     exData = data.playerDataDelta.modified
                 }
 
                 //deleted - not impl yet.
             }
 
-            if (exData.hasOwnProperty('no-impl-data')) {
+            if (Object.prototype.hasOwnProperty.call(exData, 'no-impl-data')) {
                 return
             }
 
@@ -194,7 +181,7 @@ class FnProxy {
         self.port = 8080;
         self.isRunning = false;
         self.proxy = xProxy;
-        self.onXError = function (ctx, err) { };
+        self.onXError = function (_ctx, _err) { };
 
         self.proxy.onError(function (ctx, err) {
             console.log("on error fnProxy : ")
@@ -224,7 +211,7 @@ class FnProxy {
 
 const fnProxy = new FnProxy()
 
-store.subscribe(function (pl, st) {
+store.subscribe(function (pl, _st) {
     switch (pl.type) {
         case 'serverPort':
             fnProxy.changePort(pl.payload)

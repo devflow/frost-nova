@@ -6,7 +6,8 @@ import vuetify from './plugins/vuetify';
 import Vuebar from 'vuebar';
 import './sass/main.scss'
 import store from './store'
-import VueCountdown from '@chenfengyuan/vue-countdown'; 
+import VueCountdown from '@chenfengyuan/vue-countdown';
+import i18n from './i18n'
 
 Vue.component(VueCountdown.name, VueCountdown);
 
@@ -19,5 +20,6 @@ new Vue({
   router,
   vuetify,
   store,
+  i18n,
   render: function (h) { return h(App) }
 }).$mount('#app')

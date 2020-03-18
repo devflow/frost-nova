@@ -20,8 +20,11 @@
               :items="keys"
               item-text="text"
               item-value="value"
-              label="정렬기준"
-            ></v-select>
+              :label="$t('sort_by')"
+            >
+              <template slot="selection" slot-scope="data">{{ $t(data.item.text) }}</template>
+              <template slot="item" slot-scope="data">{{ $t(data.item.text) }}</template>
+            </v-select>
             <v-spacer></v-spacer>
             <v-btn-toggle v-model="sortDesc" dense mandatory>
               <v-btn depressed dense :value="false">
@@ -35,7 +38,7 @@
         </v-toolbar>
       </template>
       <template slot="no-data">
-        <v-alert :value="true" type="error" class="ma-6" outlined>데이터가 없습니다. :(</v-alert>
+        <v-alert :value="true" type="error" class="ma-6" outlined>{{ $t('no_data') }}(</v-alert>
       </template>
       <template v-slot:default="props">
         <v-row>
@@ -63,7 +66,8 @@
                   >
                     <v-avatar left>
                       <v-icon color="white">mdi-emoticon-sad</v-icon>
-                    </v-avatar>주의력 분산
+                    </v-avatar>
+                    {{ $t('tired') }}
                   </v-chip>
 
                   <v-chip
@@ -74,7 +78,8 @@
                   >
                     <v-avatar left>
                       <v-icon color="white">mdi-coffee</v-icon>
-                    </v-avatar>휴식중
+                    </v-avatar>
+                    {{ $t('resting') }}
                   </v-chip>
 
                   <v-card-title
@@ -135,8 +140,8 @@ export default {
     sortBy: "ap",
     sortDesc: false,
     keys: [
-      { text: "피로도순", value: "ap" },
-      { text: "이름순", value: "name" }
+      { text: "ap", value: "ap" },
+      { text: "name", value: "name" }
     ],
     MAX_AP
   }),
@@ -181,11 +186,9 @@ export default {
     },
     notiEnd(cName, type) {
       new Notification("FrostNova", {
-        body:
-          cName +
-          (type == "work"
-            ? "(이)가 피로도를 모두 소진했습니다. :("
-            : "의 휴식이 끝났습니다. :D")
+        body: this.$t(type == "work" ? "x_is_tired" : "x_is_rested", {
+          name: cName
+        })
       });
     }
   }

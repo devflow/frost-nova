@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  "ignorePatterns": ["src/libs/", "node_modules/"],
   env: {
     node: true
   },
@@ -12,6 +13,7 @@ module.exports = {
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  }
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "no-unused-vars": [2, {"args": "after-used", "argsIgnorePattern": "^_"}],
+  },
 }
