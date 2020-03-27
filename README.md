@@ -1,3 +1,6 @@
+## If you use this application, you can might be banned from YoStar. ( Recently YoStar warns not to use third-party app in CN Server.) - 27/03/20
+
+
 ![Image](https://github.com/devflow/frost-nova/blob/master/public/icon.png)
 
 # FrostNOVA
